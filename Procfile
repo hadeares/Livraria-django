@@ -1,1 +1,1 @@
-web: gunicorn livraria.wsgi:application --log-file - --log-level debug
+web: gunicorn livraria.wsgi:application
