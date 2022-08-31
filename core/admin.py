@@ -1,4 +1,3 @@
-from msilib.schema import Class
 from django.contrib import admin
 
 from core.models import Autor, Categoria, Editora, Livros, Compra, ItensCompra
