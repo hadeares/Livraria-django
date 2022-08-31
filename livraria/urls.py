@@ -22,4 +22,5 @@ from core.models import Categoria
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('categorias/', views.CategoriaView.as_view())
+
 ]
