@@ -1,1 +1,1 @@
-web: gunicorn livraria-django-u.wsgi
+web: gunicorn livraria.wsgi
