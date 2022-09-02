@@ -1,5 +1,5 @@
-from rest_framework import ModelSerializer
 from core.models import Categoria 
+from rest_framework.serializers import ModelSerializer
 
 
 class CategoriaSerializer(ModelSerializer):
