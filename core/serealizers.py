@@ -1,8 +1,10 @@
 from ast import Mod
 from dataclasses import fields
+from email.policy import default
 from turtle import RawTurtle
 from core.models import Categoria, Editora, Autor, Livros, Compra, ItensCompra
 from rest_framework.serializers import ModelSerializer, CharField, SerializerMethodField
+from rest_framework import serializers
 
 
 class CategoriaSerializer(ModelSerializer):
@@ -76,11 +78,24 @@ class CriarEditarIntesCompraSerializer(ModelSerializer):
         fields = ('livro', 'quantidade')
 
 
+    def validate(self, data):
+        if data['quantaidade'] > data['livro'].quantidade:
+            raise serializers.ValidationError({
+                'quantidade': 'Quantidade solicitada não disponivel em estoque'
+            })
+        return data
+
+
 class CriarEditarCompraSerializer(ModelSerializer):
     itens = ItensCompraSerializer(many=True)
+    usuario = serializers.HiddenField(default=serializers.CurrentUserDefault())
     class meta:
         model = Compra
         fields = ('usuario', 'itens')
+
+
+
+        
     
     def Create(self, validated_data):
         itens = validated_data.pop('itens')
