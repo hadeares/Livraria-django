@@ -93,8 +93,6 @@ class CriarEditarCompraSerializer(ModelSerializer):
         model = Compra
         fields = ('usuario', 'itens')
 
-
-
         
     
     def Create(self, validated_data):
