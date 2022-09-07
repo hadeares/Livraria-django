@@ -10,12 +10,6 @@ router.register(r'categorias-viewset', views.CategoriasViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('categorias/', views.CategoriaView.as_view()),
-    path('categorias/<int:id>/', views.CategoriaView.as_view()),
-    path('categorias-apiview/', views.CategoriasList.as_view()),
-    path('categorias-apiview/<int:id>/', views.CategoriaDetail.as_view()),
-    path('categorias-gereric/', views.CategoriasListGeneric.as_view()),
-    path('categorias-generic/', views.CategoriasDetailGeneric.as_view()),
     path('', include(router.urls))
 
 ]
