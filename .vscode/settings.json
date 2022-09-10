@@ -1,4 +1,3 @@
 {
-    "typescript.suggest.autoImports": false,
-    "javascript.suggest.autoImports": false
+    "typescript.autoImportSuggestions.enabled": false
 }
