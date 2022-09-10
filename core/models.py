@@ -2,6 +2,7 @@ from django.db import models
 from django.db.models import F
 from django.contrib.auth.models import User
 from django.db.models.deletion import CASCADE
+from django.db.models.deletion import PROTECT
 
 
 class Categoria(models.Model):
